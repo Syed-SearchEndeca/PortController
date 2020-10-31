@@ -67,24 +67,28 @@ public class SampleController implements Initializable {
 		}
 		objProcList.removeAll(nProcList);
 		if (!pIdList.isEmpty()) {
-			pIdList.forEach(val -> {
+			Boolean flag = Boolean.FALSE;
+			for (String val : pIdList) {
 				String output = cmdExecutor.killProcess(val);
 				if (output != null) {
-					Alert alert = new Alert(Alert.AlertType.INFORMATION);
-					alert.setTitle("Alert");
-					Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-					try {
-						stage.getIcons().add(new Image(getClass().getResource("/JavaFXv3.png").toURI().toString()));
-					} catch (URISyntaxException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-					alert.setContentText("Port Sucessfully Killed");
-					alert.showAndWait();
+					flag = Boolean.TRUE;
+				} else {
+					flag = Boolean.FALSE;
 				}
-
-			});
-
+			}
+			if (flag) {
+				Alert alert = new Alert(Alert.AlertType.INFORMATION);
+				alert.setTitle("Alert");
+				Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+				try {
+					stage.getIcons().add(new Image(getClass().getResource("/JavaFXv3.png").toURI().toString()));
+				} catch (URISyntaxException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				alert.setContentText("Port Sucessfully Killed");
+				alert.showAndWait();
+			}
 		} else if (pIdList.isEmpty()) {
 			Alert alert = new Alert(Alert.AlertType.WARNING);
 			alert.setTitle("Warning");
@@ -98,6 +102,7 @@ public class SampleController implements Initializable {
 			alert.setContentText("Please Select a process");
 			alert.showAndWait();
 		}
+		refreshTable();
 	}
 
 	public ObservableList<ProcessKillVO> getList() {
@@ -112,8 +117,10 @@ public class SampleController implements Initializable {
 		return objProcList;
 	}
 
-	public void showAlertBox() {
-
+	public void refreshTable() {
+		objProcList.clear();
+		tableView.setItems(getList());
+		System.out.println("Refreshed");
 	}
 
 }

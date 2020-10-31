@@ -15,7 +15,7 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-       <TableView fx:id="tableView" layoutX="17.0" layoutY="81.0" prefHeight="700" prefWidth="675.0">
+       <TableView fx:id="tableView" layoutX="17.0" layoutY="81.0" prefHeight="634.0" prefWidth="675.0">
               <columns>
                 <TableColumn fx:id="protocolColumn" prefWidth="115.0" text="Protocol" />
                 <TableColumn fx:id="localAddressColumn" prefWidth="115.0" text="LocalAddress" />
@@ -25,6 +25,7 @@
                   <TableColumn fx:id="actionColumn" prefWidth="75.0" text="Select" />
               </columns>
             </TableView>
-      <Button layoutX="271.0" layoutY="920.0" mnemonicParsing="false" onAction="#killProcess" prefHeight="25.0" prefWidth="167.0" text="Kill" AnchorPane.bottomAnchor="78.39999999999998" />
+      <Button layoutX="303.0" layoutY="771.0" mnemonicParsing="false" onAction="#killProcess" prefHeight="26.0" prefWidth="104.0" text="Kill" />
+      <Button layoutX="303.0" layoutY="821.0" mnemonicParsing="false" onAction="#refreshTable" prefHeight="26.0" prefWidth="104.0" text="F5" />
     </children>
 </AnchorPane>
