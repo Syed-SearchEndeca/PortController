@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="1024" prefWidth="675" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
+    <children>
+        <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+      <Label layoutX="16.0" layoutY="33.0" text="Please select the process and click the Kill button" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+       <TableView fx:id="tableView" layoutX="17.0" layoutY="81.0" prefHeight="700" prefWidth="675.0">
+              <columns>
+                <TableColumn fx:id="protocolColumn" prefWidth="115.0" text="Protocol" />
+                <TableColumn fx:id="localAddressColumn" prefWidth="115.0" text="LocalAddress" />
+                  <TableColumn fx:id="portColumn" prefWidth="115.0" text="Port" />
+                  <TableColumn fx:id="stateColumn" prefWidth="115.0" text="State" />
+                  <TableColumn fx:id="pIdColumn" prefWidth="115.0" text="ProcessId" />
+                  <TableColumn fx:id="actionColumn" prefWidth="75.0" text="Select" />
+              </columns>
+            </TableView>
+      <Button layoutX="271.0" layoutY="920.0" mnemonicParsing="false" onAction="#killProcess" prefHeight="25.0" prefWidth="167.0" text="Kill" AnchorPane.bottomAnchor="78.39999999999998" />
+    </children>
+</AnchorPane>
