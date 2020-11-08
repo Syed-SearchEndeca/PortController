@@ -19,7 +19,7 @@ public class HelloFX extends Application {
 			primaryStage.getIcons().add(img);
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("Port Kill Application");
-			primaryStage.setHeight(963);
+			primaryStage.setHeight(600);
 			primaryStage.setWidth(720);
 			primaryStage.show();
 		} catch(Exception e) {
